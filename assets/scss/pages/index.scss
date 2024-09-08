@@ -8,11 +8,11 @@
   .tab-input-area {
     max-width: 400px;
     margin: 0 auto;
-  }
-  .nav-tabs .nav-link {
-    border-bottom: none !important; /* 移除底線 */
-    .active {
-      border-bottom: none !important;
+    button {
+      background-color: $primary;
+    }
+    button:hover {
+      background-color: #d2ca8b;
     }
   }
 
