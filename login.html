@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>forgotPassword</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>index</title>
     <script type="module" crossorigin src="/moviemeetEric/assets/all-1dcf1d8f.js"></script>
     <link rel="stylesheet" href="/moviemeetEric/assets/all-bab7c494.css">
   </head>
@@ -118,45 +122,139 @@
   </div>
 </nav>
     <main>
-      <div class="container mt50 d-flex flex-column justify-content-center">
-        <!-- 標題圖片 -->
+      <div class="container mt50 tab-area">
+        <!-- Tab Navigation -->
         <img
           class="d-block mx-auto"
           src="/moviemeetEric/assets/Moviemeet2-9b426a74.png"
           alt=""
         />
-
-        <!-- 忘記密碼表單 -->
-        <div class="mt20 forgotPassword-content card p4 bg-gray-600">
-          <h2 class="text-center mb4 text-gray-200">忘記密碼?</h2>
-          <p class="text-center text-gray-300">
-            請輸入設定的電子郵件，我們將會寄送修改密碼的驗證信給您。
-          </p>
-          <form>
-            <div class="mb4 mt10">
-              <label for="forgotEmail" class="form-label text-gray-300 mb1"
-                >電子郵件</label
+        <div class="d-flex justify-content-center mt20">
+          <ul class="nav nav-tabs" id="authTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="login-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#login"
+                type="button"
+                role="tab"
+                aria-controls="login"
+                aria-selected="true"
               >
-              <input
-                type="email"
-                class="form-control"
-                id="forgotEmail"
-                placeholder="輸入你的 Email"
-                required
-              />
-            </div>
-            <button type="submit" class="btn btn-primary w-100">
-              發送驗證信
-            </button>
-          </form>
+                登入
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="register-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#register"
+                type="button"
+                role="tab"
+                aria-controls="register"
+                aria-selected="false"
+              >
+                註冊
+              </button>
+            </li>
+          </ul>
+        </div>
 
-          <button
-            type="submit"
-            class="btn btn-primary mt4 w-100"
-            onclick="window.location.href='index.html';"
+        <!-- Tab Content -->
+        <div class="tab-content mt3 tab-input-area" id="authTabsContent">
+          <!-- Login Form -->
+          <div
+            class="tab-pane fade show active"
+            id="login"
+            role="tabpanel"
+            aria-labelledby="login-tab"
           >
-            返回登入頁面
-          </button>
+            <form>
+              <div class="mb3">
+                <label for="loginEmail" class="form-label text-gray-200 mb1"
+                  >電子信箱</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  placeholder="輸入你的 Email"
+                />
+              </div>
+              <div class="mb6">
+                <label for="loginPassword" class="form-label text-gray-200 mb1"
+                  >密碼</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPassword"
+                  placeholder="輸入你的密碼"
+                />
+              </div>
+              <p class="">
+                <a
+                  href="./forgotPassword.html"
+                  id="forgotPassword"
+                  class="text-gray-300 mb2"
+                  >忘記密碼？</a
+                >
+              </p>
+              <button type="submit" class="btn w-100">登入</button>
+              <button type="submit" class="btn w-100 mt4">點我註冊會員</button>
+            </form>
+          </div>
+
+          <!-- Register Form -->
+          <div
+            class="tab-pane fade"
+            id="register"
+            role="tabpanel"
+            aria-labelledby="register-tab"
+          >
+            <form>
+              <div class="mb3">
+                <label for="registerEmail" class="form-label text-gray-200 mb1"
+                  >請輸入電子信箱</label
+                >
+                <input
+                  type="email"
+                  class="form-control mx-auto"
+                  id="registerEmail"
+                  placeholder="輸入你的 Email"
+                />
+              </div>
+              <div class="mb3">
+                <label
+                  for="registerPassword"
+                  class="form-label text-gray-200 mb1"
+                  >請輸入密碼</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="registerPassword"
+                  placeholder="輸入你的密碼"
+                />
+              </div>
+              <div class="mb6">
+                <label
+                  for="registerConfirmPassword"
+                  class="form-label text-gray-200 mb1"
+                  >再次確認密碼</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="registerConfirmPassword"
+                  placeholder="確認你的密碼"
+                />
+              </div>
+              <button type="submit" class="btn w-100">註冊</button>
+            </form>
+          </div>
         </div>
       </div>
     </main>
