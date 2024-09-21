@@ -33,20 +33,23 @@ export default defineConfig({
   ],
   server: {
     // 啟動 server 時預設開啟的頁面
-    open: "pages/index.html",
+    open: "pages/login.html",
   },
   build: {
     rollupOptions: {
       input: Object.fromEntries(
-        glob
-          .sync("pages/**/*.html")
-          .map((file) => [
-            path.relative(
-              "pages",
-              file.slice(0, file.length - path.extname(file).length)
-            ),
-            fileURLToPath(new URL(file, import.meta.url)),
-          ])
+        [
+          "./pages/login.html",
+          ...glob
+            .sync("pages/**/*.html")
+            .filter((file) => file !== "./pages/login.html"),
+        ].map((file) => [
+          path.relative(
+            "pages",
+            file.slice(0, file.length - path.extname(file).length)
+          ),
+          fileURLToPath(new URL(file, import.meta.url)),
+        ])
       ),
     },
     outDir: "dist",
